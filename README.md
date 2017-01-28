@@ -1,14 +1,16 @@
-# GoBridge Session 1 Notes
+# GoBridge
 
-Some notes taken from session 1 of GoBridge London (28<sup>th</sup> Jan '17), for those who wiped all their progress in the Go Playground
+### Session 1 Notes
 
-:anguished:
+Notes taken from session 1 of GoBridge London (28<sup>th</sup> Jan '17), for those who wiped all their progress in the Go Playground
+
+:anguished: :disappointed: :anguished:
 
 Hopefully they're useful to someone!
 
 ---
 
-### Notes / Examples
+#### Notes / Examples
 - [variables/strings](notes/strings.go)
 - [empty](notes/empty.go)
 - [slices](notes/slices.go)
@@ -19,6 +21,6 @@ Hopefully they're useful to someone!
 - [loops](notes/loops.go)
 - [structures](notes/structures.go)
 
-### Challenges
+#### Challenges
 - [challenge-1](challenges/challenge-1.go)
 - [challenge-2](challenges/challenge-2.go)
