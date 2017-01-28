@@ -8,7 +8,7 @@ import (
 // Type does not _need_ to start with a capital letter
 // but may make you want to gouge your eyes out later
 type Kitten struct {
-  Firstname string
+  firstname string
   Surname string
   Birthday string
 }
@@ -16,7 +16,7 @@ type Kitten struct {
 // These functions belongs to the Kitten type
 func (k Kitten) PrintName() {
   // Print the name of this particular kitten
-  fmt.Println(k.Firstname, k.Surname)
+  fmt.Println(k.firstname, k.Surname)
 }
 
 func (k Kitten) PrintAge() {
@@ -29,7 +29,7 @@ func main() {
   kitty := Kitten{}
 
   // Assign some values
-  kitty.Firstname = "Mr"
+  kitty.firstname = "Mr"
   kitty.Surname = "Tiggles"
   kitty.Birthday = "2016-Jan-01"
 

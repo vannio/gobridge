@@ -5,8 +5,11 @@ import (
 )
 
 func main() {
-  // Declaring variable and assignment on one line
+  // Declare variable and assign value on one line
   hello := "Hello"
+
+  // Or like this..
+  // var hello = "Hello"
 
   // Declare empty variable and specify type
   var target string

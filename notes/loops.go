@@ -7,8 +7,11 @@ import (
 func main() {
   mystring := "Hello"
 
-  // Assignment, check, increment
+  // Assignment, evaluation, increment
   for i := 0; i < 5; i++ {
+    // i is usually used as shorthand for 'index', aka position
+    // mystring[i] will access the value of whatever is at position i
+    //
     fmt.Println(i, string(mystring[i]))
   }
 
@@ -20,6 +23,9 @@ func main() {
     fmt.Println(i, string(mystring[i]))
     // i++ is the same as writing i = i + 1
     i++
+    
+    // If we don't change the value of i, i will _always_ be 0
+    // so this will run indefinitely and probably crash your application
   }
 
   // For each byte in the string,
