@@ -20,8 +20,6 @@ func main() {
     case 8:
       fmt.Println("Eight")
     default:
-      // If a value is neither 1, 4 or 8
-      // print "Nope"
       fmt.Println("Nope")
     }
   }

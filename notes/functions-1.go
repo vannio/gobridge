@@ -16,6 +16,7 @@ func main() {
   // Can also be written as: if success == true
   if success {
     fmt.Println(sum, success)
+    // => 4 true
   }
 }
 

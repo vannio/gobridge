@@ -10,6 +10,7 @@ import (
 func sayHello(firstName, lastName, birthday string) {
   age := calculateAge(birthday)
   fmt.Println("Hi", firstName, lastName + ", you are " + age + " years old")
+  // => "Hi Van Le, you are 26.5 years old"
 }
 
 func calculateAge(birthday string) string {

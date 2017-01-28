@@ -11,4 +11,5 @@ func main() {
   exampleFloat := 0.5
 
   fmt.Println(exampleFloat)
+  // => 0.5
 }

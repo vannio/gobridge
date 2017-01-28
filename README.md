@@ -11,14 +11,16 @@ Hopefully they're useful to someone!
 ---
 
 #### Notes / Examples
-- [variables/strings](notes/strings.go)
+- [variables/strings](notes/variables-strings.go)
 - [empty](notes/empty.go)
 - [slices](notes/slices.go)
 - [floats](notes/floats.go)
 - [conditionals](notes/conditionals.go)
-- [functions1](notes/functions1.go)
-- [functions2](notes/functions2.go)
+- [functions-1](notes/functions-1.go)
+- [functions-2](notes/functions-2.go)
 - [loops](notes/loops.go)
+- [defer-1](notes/defer-1.go)
+- [defer-2](notes/defer-2.go)
 - [structures](notes/structures.go)
 
 #### Challenges
