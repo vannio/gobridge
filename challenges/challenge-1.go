@@ -5,8 +5,8 @@ import (
 )
 
 func main() {
-  // TODO:
-  // Print out strings for One, Four, Eight
+  // Challenge:
+  // Print out strings for "One", "Four", "Eight"
   // whilst looping through 0 to 9
 
   i := 0
@@ -19,7 +19,9 @@ func main() {
     case 8:
       fmt.Println("Eight")
     default:
-      fmt.Println(i)
+      // If a value is neither 1, 4 or 8
+      // print "Nope"
+      fmt.Println("Nope")
     }
 
     i++

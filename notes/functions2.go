@@ -1,12 +1,12 @@
 package main
 
 import (
-	"fmt"
+  "fmt"
   "time"
 )
 
-// If there are multiple variables are of the same type,
-// specifying type can be written shorthand
+// If multiple arguments (variables being passed into a function)
+// are of the same type, you only need to specify type once
 func sayHello(firstName, lastName, birthday string) {
   age := calculateAge(birthday)
   fmt.Println("Hi", firstName, lastName + ", you are " + age + " years old")
