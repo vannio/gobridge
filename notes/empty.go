@@ -19,4 +19,9 @@ func main() {
   var date time.Time
   fmt.Println(date)
   // => 0001-01-01 00:00:00 +0000 UTC
+
+  // Length of empty string
+  var string string
+  fmt.Println(len(string))
+  // => 0
 }
