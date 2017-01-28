@@ -12,9 +12,9 @@ Hopefully they're useful to someone!
 
 #### Notes / Examples
 - [variables/strings](notes/variables-strings.go)
-- [empty](notes/empty.go)
+- [numbers](notes/numbers.go)
 - [slices](notes/slices.go)
-- [floats](notes/floats.go)
+- [empty](notes/empty.go)
 - [conditionals](notes/conditionals.go)
 - [functions-1](notes/functions-1.go)
 - [functions-2](notes/functions-2.go)
