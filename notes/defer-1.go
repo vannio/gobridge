@@ -17,10 +17,17 @@ func three() {
 }
 
 func main() {
-  // the last defer will be the first one called
+  // defer is used to change the order of functions called
+  
+  // This will run last
   defer one()
+  
+  // The last defer is the first one called
   defer two()
+  
+  // This code is not deferred, so will run first!
   three()
+  
   // =>  "three"
   //     "two"
   //     "one"
