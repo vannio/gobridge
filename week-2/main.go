@@ -1,19 +1,35 @@
-// Main entry point!
 package main
 
-// blank lines added (by convention) to separate types of packages
-// eg. standard packages, custom packages
 import (
   "fmt"
-
-  "github.com/vannio/gobridge/week-2/animals"
+  "net/http"
 )
 
-func main() {
-  kitty := animals.Kitten{} // namespace from package name
-  kitty.SetName("Mr Tiggles")
-  fmt.Println(kitty.GetName()) // => "Mr Tiggles"
+func Hello(rw http.ResponseWriter, r *http.Request) {
+  // rw is the outputter, the response
+  // r is the request, information that was passed into the webserver
 
-  dog := animals.Dog{}
-  fmt.Println(dog.Bark())
+  // Fprint converts string to a stream of bytes
+  // and sends it as a response
+  fmt.Fprint(rw, "Hello")
+}
+
+// Using args that look more like the node code I recognise :smile:
+func Goodbye(res http.ResponseWriter, req *http.Request) {
+  fmt.Fprint(res, "Goodbye")
+}
+
+func main() {
+  // Convenience method - creates new route
+  // maps handler on the DefaultServeMux
+  // For any request that matches "/hello", execute HelloWorld
+  http.HandleFunc("/hello", Hello)
+  http.HandleFunc("/goodbye", Goodbye)
+
+  // Routing handler: http.DefaultServeMux
+  // DefaultServeMux registers routes
+  // ServeMux is a type which implements the Handler
+  fmt.Println("Listening for connections on port", 9000)
+  http.ListenAndServe(":9000", http.DefaultServeMux)
+  // New word for vocab! Mux: a term referring to a device that takes multiple inputs and forwards them into one line.
 }

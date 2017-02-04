@@ -14,4 +14,12 @@
 
 ### Go packages
 - Split code into reusable chunks
-- [Example packages](animals)
+- [Example packages](animals) and [packages in use](animals.go)
+
+### Web server
+Url example: `https://golang.org/`
+
+- `https://` - protocol
+- `golang.org` - unique address, like a PostCode
+- `/` - root, like a 'drawer'
+- [Example server](main.go)
