@@ -34,3 +34,4 @@ Given this example URL `https://golang.org/doc` and imagining the web-server as 
 - Request is a struct passed by reference, so we include the *
 
 ### Unit tests
+- [Example unit test](animals/dog_test.go)
