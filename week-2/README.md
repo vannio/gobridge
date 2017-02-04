@@ -14,12 +14,13 @@
 
 ### Go packages
 - Split code into reusable chunks
-- [Example packages](animals) and [packages in use](animals.go)
+- [Example packages](animals) and [packages in use](notes/animals.go)
 
 ### Web server
-Url example: `https://golang.org/`
+Given this example URL `https://golang.org/doc` and imagining the web-server as a city:
 
-- `https://` - protocol
-- `golang.org` - unique address, like a PostCode
-- `/` - root, like a 'drawer'
-- [Example server](main.go)
+- `https://` - protocol (I have no clever analogy for this)
+- `golang.org` - unique address, like a house at a particular postcode
+- `/doc` - route, like a room in the house
+
+- [Example server](notes/web-server.go)

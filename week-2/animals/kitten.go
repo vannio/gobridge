@@ -2,6 +2,7 @@ package animals // needs to be the same as folder(?)
 
 type Kitten struct {
   Name string
+  Hobbies []string
 }
 
 // Must use k reference (hence the *)
@@ -13,4 +14,12 @@ func (k *Kitten) SetName(name string) {
 
 func (k Kitten) GetName() string {
   return k.Name
+}
+
+func (k Kitten) SetHobbies(hobbies []string) {
+  k.Hobbies = hobbies
+}
+
+func (k Kitten) GetHobbies() []string {
+  return k.Hobbies
 }

@@ -3,33 +3,48 @@ package main
 import (
   "fmt"
   "net/http"
+  "encoding/json"
+
+  "github.com/vannio/gobridge/week-2/animals"
 )
 
-func Hello(rw http.ResponseWriter, r *http.Request) {
-  // rw is the outputter, the response
-  // r is the request, information that was passed into the webserver
+// Global scope because its used in both ListKittens() and main()
+var kittens []animals.Kitten
 
-  // Fprint converts string to a stream of bytes
-  // and sends it as a response
-  fmt.Fprint(rw, "Hello")
-}
+func ListKittens(res http.ResponseWriter, req *http.Request) {
+  data, err := json.Marshal(kittens)
 
-// Using args that look more like the node code I recognise :smile:
-func Goodbye(res http.ResponseWriter, req *http.Request) {
-  fmt.Fprint(res, "Goodbye " + req.URL.Query().Get("name"))
+  // Deal with error immediately
+  // Better quality code than using try catch
+  if err != nil {
+    res.WriteHeader(http.StatusInternalServerError)
+    return
+  }
+
+  res.Write(data)
 }
 
 func main() {
-  // Convenience method - creates new route
-  // maps handler on the DefaultServeMux
-  // For any request that matches "/hello", execute HelloWorld
-  http.HandleFunc("/hello", Hello)
-  http.HandleFunc("/goodbye", Goodbye)
+  kittens = []animals.Kitten{
+    animals.Kitten{
+      Name: "Ms Tiggles",
+      Hobbies: []string{
+        "Playing with wool",
+        "Eating",
+      },
+    },
+    animals.Kitten{
+      Name: "Mr Tom",
+      Hobbies: []string{
+        "Chasing own tail",
+        "Napping on cushions",
+        "Eating",
+      },
+    },
+  }
 
-  // Routing handler: http.DefaultServeMux
-  // DefaultServeMux registers routes
-  // ServeMux is a type which implements the Handler
+  http.HandleFunc("/list", ListKittens)
+
   fmt.Println("Listening for connections on port", 9000)
   http.ListenAndServe(":9000", http.DefaultServeMux)
-  // New word for vocab! Mux: a term referring to a device that takes multiple inputs and forwards them into one line.
 }
