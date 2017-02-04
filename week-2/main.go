@@ -28,13 +28,20 @@ func ListPets(res http.ResponseWriter, req *http.Request) {
 func LikePet(res http.ResponseWriter, req *http.Request) {
   name := req.URL.Query().Get("name")
 
+  if (len(name) == 0) {
+    fmt.Fprint(res, "Specify a pet name to like!")
+    return
+  }
+
   for _, pet := range pets {
+    // Case insensitive name-matching
     if (strings.ToLower(pet.GetName()) == strings.ToLower(name)) {
       pet.AddLike()
 
       fmt.Fprint(res,
-        "You liked " + pet.GetName() + ". " + "They now have ",
-        fmt.Sprint(pet.GetLikes()) + " likes!",
+        "Ooh-la-la, you liked " + pet.GetName() + ". ",
+        pet.GetName() + " now has ",
+        pluraliseLikesCount(pet.GetLikes()),
       )
 
       // Quit iterating as soon as it matches a name
@@ -46,6 +53,13 @@ func LikePet(res http.ResponseWriter, req *http.Request) {
   // If there have been no matches, the `return` above won't be called
   // So the program should continue to this line
   fmt.Fprint(res, "Can't find pet with name " + name)
+}
+
+func pluraliseLikesCount(likes int) string {
+  if likes > 1 {
+    return fmt.Sprint(likes) + " likes!"
+  }
+  return fmt.Sprint(likes) + " like!"
 }
 
 func main() {
@@ -74,6 +88,7 @@ func main() {
     },
   }
 
+  http.HandleFunc("/", ListPets) // The root route
   http.HandleFunc("/list", ListPets)
   http.HandleFunc("/like", LikePet)
 
