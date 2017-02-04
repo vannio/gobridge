@@ -16,7 +16,7 @@ func Hello(rw http.ResponseWriter, r *http.Request) {
 
 // Using args that look more like the node code I recognise :smile:
 func Goodbye(res http.ResponseWriter, req *http.Request) {
-  fmt.Fprint(res, "Goodbye")
+  fmt.Fprint(res, "Goodbye " + req.URL.Query().Get("name"))
 }
 
 func main() {
