@@ -17,8 +17,8 @@ func calculateBirthYear(age int) int {
 
 func main() {
   people := []Person{
-    {"Agnes", 10},
-    {"Maria", 15},
+    Person{"Agnes", 10},
+    Person{"Maria", 15},
   }
 
   // OR
@@ -30,4 +30,6 @@ func main() {
     birthYear := fmt.Sprint(calculateBirthYear(person.Age))
     fmt.Println(person.Name + " was born in the year " + birthYear)
   }
+  // => Agnes was born in the year 2007
+  //    Maria was born in the year 2002
 }

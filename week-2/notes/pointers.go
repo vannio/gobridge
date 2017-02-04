@@ -14,8 +14,11 @@ func withoutPointer() {
   // ..which is why this doesn't update `b`
   a = 7
 
-  fmt.Println(a) // => 7
-  fmt.Println(b) // => 5
+  fmt.Println(a)
+  // => 7
+
+  fmt.Println(b)
+  // => 5
 }
 
 func withPointers() {
@@ -26,13 +29,16 @@ func withPointers() {
 
   a = 7
 
-  fmt.Println(a) // => 7
+  fmt.Println(a)
+  // => 7
 
   // will print memory address
-  fmt.Println(b)  // => 0xc42007c048
+  fmt.Println(b)
+  // => 0xc42007c048
 
   // dereference | "get the value"
-  fmt.Println(*b) // => 7
+  fmt.Println(*b)
+  // => 7
 }
 
 func main() {
