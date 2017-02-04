@@ -3,6 +3,7 @@ package animals
 type Dog struct {
   Name string
   Hobbies []string
+  Likes int
 }
 
 func (d *Dog) SetName(name string) {
@@ -19,6 +20,14 @@ func (d *Dog) SetHobbies(hobbies []string) {
 
 func (d *Dog) GetHobbies() []string {
   return d.Hobbies
+}
+
+func (d *Dog) AddLike() {
+  d.Likes++
+}
+
+func (d *Dog) GetLikes() int {
+  return d.Likes
 }
 
 func (d *Dog) Bark() string {

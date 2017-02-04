@@ -7,4 +7,6 @@ type Pet interface {
   GetName() string
   SetHobbies(hobbies []string)
   GetHobbies() []string
+  AddLike()
+  GetLikes() int
 }
