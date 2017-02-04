@@ -8,6 +8,12 @@ Notes taken from sessions of GoBridge London (Jan '17), for those who wiped all 
 
 ---
 
+### Week 2
+
+[Notes](week-2)
+
+---
+
 ### Week 1
 
 #### Notes / Examples
