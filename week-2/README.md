@@ -12,6 +12,12 @@
 - Pointers are shortcuts to variables (like a shortcut on desktop)
 - [Example code](notes/pointers.go)
 
+### Interface
+- Abstracted shared methods/properties (Go's way of duck-typing, by defined behaviour)
+- Interfaces are always a reference
+- Interfaces don't need to be used in a package
+- [Example interface](animals/pet.go)
+
 ### Go packages
 - Split code into reusable chunks
 - [Example packages](animals) and [packages in use](notes/animals.go)
@@ -24,3 +30,7 @@ Given this example URL `https://golang.org/doc` and imagining the web-server as 
 - `/doc` - route, like a room in the house
 
 - [Example server](notes/web-server.go)
+- ResponseWriter is an interface, so the * is implied
+- Request is a struct passed by reference, so we include the *
+
+### Unit tests

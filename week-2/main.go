@@ -9,10 +9,10 @@ import (
 )
 
 // Global scope because its used in both ListKittens() and main()
-var kittens []animals.Kitten
+var pets []animals.Pet
 
 func ListKittens(res http.ResponseWriter, req *http.Request) {
-  data, err := json.Marshal(kittens)
+  data, err := json.Marshal(pets)
 
   // Deal with error immediately
   // Better quality code than using try catch
@@ -25,19 +25,26 @@ func ListKittens(res http.ResponseWriter, req *http.Request) {
 }
 
 func main() {
-  kittens = []animals.Kitten{
-    animals.Kitten{
+  pets = []animals.Pet{
+    &animals.Kitten{
       Name: "Ms Tiggles",
       Hobbies: []string{
         "Playing with wool",
         "Eating",
       },
     },
-    animals.Kitten{
+    &animals.Kitten{
       Name: "Mr Tom",
       Hobbies: []string{
         "Chasing own tail",
         "Napping on cushions",
+        "Eating",
+      },
+    },
+    &animals.Dog{
+      Name: "Fido",
+      Hobbies: []string{
+        "Barking",
         "Eating",
       },
     },
