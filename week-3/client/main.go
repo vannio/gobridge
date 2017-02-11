@@ -5,6 +5,7 @@ import (
 	"io/ioutil"
 	"log"
 	"net/http"
+	"sort"
 )
 
 // Pet : a subset of animals
@@ -12,6 +13,33 @@ type Pet struct {
 	Name    string
 	Hobbies []string
 	Likes   int
+}
+
+// Pets : A type alias
+type Pets []Pet
+
+// Example of bubble sorting algorithm:
+// c, b, a
+
+// is c 'bigger than' b?
+// b, c, a
+
+// is c 'bigger than' a?
+// b, a, c
+
+// is c 'bigger than' b?
+// a, b, c
+
+func (a Pets) Len() int {
+	return len(a)
+}
+
+func (a Pets) Swap(i, j int) {
+	a[i], a[j] = a[j], a[i]
+}
+
+func (a Pets) Less(i, j int) bool {
+	return a[i].Name < a[j].Name
 }
 
 func main() {
@@ -37,7 +65,11 @@ func main() {
 
 	// We want to read JSON and save it
 	// Source data is an array/slice of pets
-	pets := []Pet{}
+	pets := Pets{}
+
+	// var pets Pets
+	// is the same as:
+	// var pets []Pet
 
 	// We want Unmarshal to modify pet so we pass in a reference
 	err = json.Unmarshal(data, &pets)
@@ -49,6 +81,8 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
+	sort.Sort(pets)
 
 	// CHALLENGE
 	// loop through pets and print each one on a different line
