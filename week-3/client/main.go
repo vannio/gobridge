@@ -42,12 +42,17 @@ func main() {
 	// We want Unmarshal to modify pet so we pass in a reference
 	err = json.Unmarshal(data, &pets)
 
+	// json.Unmarshal needs a slice of bytes (data) and a 'schema' in form of a blank interface
+	// interface can be anything(?) - lowest form of object
+	// Could be a value, could be a reference
+
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	// json.Unmarshal needs a slice of bytes (data) and a 'schema' in form of a blank interface
-	// interface can be anything(?) - lowest form of object
-	// Could be a value, could be a reference
-	log.Println(pets)
+	// CHALLENGE
+	// loop through pets and print each one on a different line
+	for _, pet := range pets {
+		log.Println(pet.Name)
+	}
 }
