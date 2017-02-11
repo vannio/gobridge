@@ -39,7 +39,7 @@ func (a Pets) Swap(i, j int) {
 }
 
 func (a Pets) Less(i, j int) bool {
-	return a[i].Name < a[j].Name
+	return a[i].Name > a[j].Name
 }
 
 func main() {
@@ -87,6 +87,6 @@ func main() {
 	// CHALLENGE
 	// loop through pets and print each one on a different line
 	for _, pet := range pets {
-		log.Println(pet.Name)
+		log.Println(pet.Name, "likes", pet.Hobbies)
 	}
 }
