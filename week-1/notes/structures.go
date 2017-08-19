@@ -5,7 +5,10 @@ import (
 	"time"
 )
 
-// Type does not _need_ to start with a capital letter
+// Structs are _similar_ to classes in other languages
+// Contains other types, called fields
+
+// Struct type does not _need_ to start with a capital letter
 // but may make you want to gouge your eyes out later
 type Kitten struct {
 	Firstname string
